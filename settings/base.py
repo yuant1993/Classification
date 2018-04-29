@@ -13,7 +13,7 @@ SECRET_KEY = 'r3+bkdo3(j9qp1z1#u*zkf&wj1s=&qdyh&$4^l4=0zca#x#c41'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'heavywaterclassification.us-east-2.elasticbeanstalk.com']
 
 
 # Application definition
