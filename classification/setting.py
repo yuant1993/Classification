@@ -25,8 +25,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'classification'
+    'classification',
+    "django_extensions",
 ]
+
+INTERNAL_IPS = (
+    '127.0.0.1',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -107,3 +112,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'classification.settings'
+USE_HTTPS = False
+SESSION_COOKIE_SECURE = USE_HTTPS
