@@ -9,3 +9,8 @@
 .heading {
   margin-top: 100px;
 }
+
+.instruction {
+  width: max-content;
+  margin: 0 auto;
+}

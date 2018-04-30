@@ -1,5 +1,8 @@
 This is the document classification web service for HeavyWater
 
+URL:
+http://heavywaterproject.us-east-2.elasticbeanstalk.com/
+
 Using instruction:
 On the home page, please upload one CSV test file having the same format as the "shuffled-full-set-hashed.csv" and click the "Summit" button.
 This will lead to the classification page which will show you a table having "True label", "Predicted label" and "Confidence score" columns and also the accuracy_score above the table.
@@ -10,4 +13,4 @@ I have tried to use AWS Lambda, but the unzipped file size should be less than 2
 I have switched to AWS EB which doesn't limit the file size. However, I still have to deal with the memory issue because the free instance (t2.micro) I am using has very limited memory size.Please don't upload a file having more than 1800 documents to the service, because you would get a MemoryError.
 
 Github issue:
-As I said above, the model.pkl is super large and the Github cannot accept a single file larger than 100M, so I switched to bitbucket. The whole repository is on the bitbucket (https://bitbucket.org/zhuangjiadi/document-classification/src/8914738c6991ace8818fe3b2978bd7f3cc0f6ef3?at=master). I've also uploaded the folder without the model.pkl to the Github (https://github.com/zhuangjiadi/Document-Classification). I'm really curious about ways to solving the large file issues and I would be very appreciated if you could share your thoughts with me.
+As I said above, the model.pkl is super large and the Github cannot accept a single file larger than 100M, so I switched to bitbucket. The whole repository is on the bitbucket (https://bitbucket.org/zhuangjiadi/document-classification/src/8914738c6991ace8818fe3b2978bd7f3cc0f6ef3?at=master). I've also uploaded the folder without the model.pkl to the Github (https://github.com/zhuangjiadi/Classification). I'm really curious about ways to solving the large file issues and I would be very appreciated if you could share your thoughts with me.
