@@ -2,7 +2,7 @@ env
 *.pyc
 *.DS_Store
 *.csv
-train
+model.pkl
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

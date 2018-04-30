@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-<form method="post" action="{% url 'classification' %}">
-  {% csrf_token %}
-  <input type="file" accept=".csv"/>
-  <button>Summit</button>
-</form>
-{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'style/homepage.css' %}">
+{% endblock head %}
+
+{% block content %}
+<h1 class="heading" align="center">Welcome to the document classification webservice</h1>
+
+<h2 class="title" align="center">Please import your csv testfile</h2>
+
+<form method="post" action="{% url 'classification' %}" enctype="multipart/form-data" class="input_form">
+  {% csrf_token %}
+  <input type="file" name="csvfile" required="True" class="input_file"/>
+  <button>Summit</button>
+</form>
+
+<div class="instruction">
+  Please upload a csv file having the same format as the "shuffled-full-set-hashed.csv" file
+  Please don't upload a large test file (less than 1800 documents per csv file)
+  Because the free EC2 instance (t2.micro) has very limited memory
+</div>
+{% endblock content %}

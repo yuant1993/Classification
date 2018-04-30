@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'style/classification.css' %}">
+{% endblock head %}
+
+{% block content %}
+<form method="post" action="{% url 'classification' %}" enctype="multipart/form-data" class="input_form">
+  {% csrf_token %}
+  <input type="file" name="csvfile" required="True" class="input_file"/>
+  <button>Summit</button>
+</form>
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{message.tags}}">{{message}}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% if accuracy_score %}
+  <div class="score">
+    The accuracy score is {{accuracy_score}}.
+  </div>
+{% endif %}
+
+{% if results %}
+  <table align="center">
+    <tr>
+      <th>True label</th>
+      <th>Predicted label</th>
+      <th>Confidence score</th>
+    </tr>
+    {% for result in results %}
+      <tr>
+        <td>{{result.true}}</td>
+        <td>{{result.pred}}</td>
+        <td>{{result.confidence}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+{% endblock content %}

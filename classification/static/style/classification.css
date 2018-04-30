@@ -1,0 +1,19 @@
+.input_form {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.input_file {
+  border: grey 1px solid;
+}
+
+.score {
+  font-size: 20px;
+  margin: 0 auto;
+  width: max-content;
+}
+
+table {
+  margin-top: 20px;
+}
