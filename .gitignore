@@ -2,7 +2,8 @@ env
 *.pyc
 *.DS_Store
 *.csv
-model.pkl
+*pkl
+!vectorizer-aws.pkl
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

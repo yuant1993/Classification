@@ -38,10 +38,10 @@ class ClassificationView(TemplateView):
             return HttpResponseRedirect(reverse("classification"))
 
         df = pd.read_csv(csvfile, header=None, names=['label', 'words'])
-        vectorizer = joblib.load('train/vectorizer.pkl')
+        vectorizer = joblib.load('train/vectorizer-aws.pkl')
         X = vectorizer.transform(df.words.values.astype('U'))
         y = df.label
-        clf = joblib.load('train/model.pkl')
+        clf = joblib.load('train/model-aws.pkl')
         y_pred = clf.predict(X)
         y_pred_prob = clf.predict_proba(X)
 
